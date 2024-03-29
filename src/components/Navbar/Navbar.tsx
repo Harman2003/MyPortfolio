@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Magnetic } from "@/extras/Magnetic";
 import { navLinks } from "@/constant/navlinks";
 import Link from "next/link";

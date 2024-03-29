@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { MouseEvent } from "react";
 import { projects } from "@/constant/projects";
 import Image from "next/image";
@@ -14,10 +14,10 @@ import { Magnetic } from "@/extras";
 import HoverEffect from "@/components/HoverEffect/HoverEffect";
 import Link from "next/link";
 const Projects = () => {
-  const { clientX, clientY } = useMousePosition();
   const containerRef = useRef<HTMLDivElement>(null);
   const hoverCardRef = useRef<HTMLDivElement>(null);
   const [isHover, setIsHover] = useState<boolean>(false);
+  const { clientX, clientY } = useMousePosition();
   const [projectIdx, setProjectIdx] = useState<number>(0);
   const yScroll = projectIdx * -100 + "%";
   const { scrollY } = useScroll();

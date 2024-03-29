@@ -24,7 +24,7 @@ export const Magnetic: React.FC<MagneticProps> = ({className, xFactor=0.5, yFact
     setPosition({ x: 0, y: 0 });
   };
   const { x, y } = position;
-
+  // console.log(x,y)
   return (
     <motion.div
       layout="position"
@@ -32,7 +32,7 @@ export const Magnetic: React.FC<MagneticProps> = ({className, xFactor=0.5, yFact
       onMouseLeave={leave}
       ref={ref}
       whileHover={{ x, y, transition: { duration:0.2}}}
-      transition={{ type: "spring", stiffness: 90, damping: 5, mass: 0.5, duration:5}}
+      transition={{ type: "spring", stiffness: 100, damping: 5, mass: 0.5}}
       className={className}
     >
       {children}

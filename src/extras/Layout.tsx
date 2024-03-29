@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 import { Greeting } from "@/components";
 import Lenis from "@studio-freight/lenis";
 interface LayoutProps {

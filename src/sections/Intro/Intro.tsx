@@ -5,6 +5,8 @@ import {
   MotionValue,
   useScroll,
   useTransform,
+  useInView,
+  useAnimate,
 } from "framer-motion";
 import { Magnetic } from "@/extras";
 import HoverEffect from "@/components/HoverEffect/HoverEffect";
@@ -17,6 +19,9 @@ const Intro = () => {
     offset: ["start end", "end start"],
   });
 
+  const paraRef= useRef<HTMLParagraphElement>(null)
+  const isInView = useInView(paraRef);
+
   const y = useTransform(scrollYProgress, [0, 1], [150, 0]);
   return (
     <section
@@ -25,14 +30,14 @@ const Intro = () => {
       className="font-manrope pt-20 relative"
     >
       <div className="grid sm:grid-cols-[50%,30%] justify-evenly px-4 sm:px-20 relative">
-        <p className="sm:max-w-[660px] font-medium text-[clamp(1.5rem,2.5vw,2rem)]">
-          {IntroText.split(" ").map((char) => (
-            <>
+        <p className="sm:max-w-[660px] font-medium text-[clamp(1.5rem,2.5vw,2rem)]" ref={paraRef}>
+          {IntroText.split(" ").map((char, idx) => (
+            <span key={idx}>
             <span className="inline-block leading-[clamp(1.9rem,4vw,2.5rem)] overflow-hidden">
-              <motion.span className="inline-block relative" whileInView={{y:["100%","0%"]}} transition={{duration:0.5}}>{char}</motion.span>
+              <motion.span className="inline-block relative" animate={{y:isInView?"0%":"100%"}} transition={{duration:0.5}}>{char}</motion.span>
               </span>
               <span>{" "}</span>
-            </>
+            </span>
           ))}
         </p>
         <div className="max-w-[60%] sm:max-w-[250px] pt-10 sm:pt-2 relative">
@@ -56,7 +61,7 @@ const AboutButton: React.FC<{ y: MotionValue<number> }> = ({ y }) => {
     <Link href="/about" className="cursor-pointer rounded-full overflow-hidden">
       <motion.div style={{ y }}>
         <Magnetic
-          className="bg-black size-36 flex rounded-full overflow-hidden"
+          className="bg-black size-36 sm:size-48 flex rounded-full overflow-hidden"
           xFactor={0.5}
           yFactor={0.5}
         >
@@ -66,7 +71,7 @@ const AboutButton: React.FC<{ y: MotionValue<number> }> = ({ y }) => {
             xFactor={0.1}
             yFactor={0.1}
           >
-            <span className="w-full h-full flex justify-center items-center text-white font-semibold">
+            <span className="w-full h-full flex justify-center items-center text-white sm:text-lg">
               About me
             </span>
           </Magnetic>

@@ -1,4 +1,3 @@
-"use client";
 import React, {MouseEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -27,7 +26,6 @@ export const Magnetic: React.FC<MagneticProps> = ({className, xFactor=0.5, yFact
   // console.log(x,y)
   return (
     <motion.div
-      layout="position"
       onMouseMove={move}
       onMouseLeave={leave}
       ref={ref}

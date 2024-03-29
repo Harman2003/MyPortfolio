@@ -1,7 +1,7 @@
 "use client";
 import { greetingMap } from "@/utils/greetingMap";
 import { usePathname } from "next/navigation";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const Greeting = () => {
@@ -10,11 +10,11 @@ export const Greeting = () => {
   const greetingList = greetingMap(path);
   const isVisible = idx < greetingList.length;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setIdx(0);
   }, [path]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let timer: any;
     (() => {
       timer = setTimeout(

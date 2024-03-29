@@ -11,7 +11,7 @@ export const MotionText: React.FC<MotionTextProps> = ({ text, x, parent }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const [left, setLeft] = useState<number>(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (ref.current) {
       const left = ref.current.getBoundingClientRect().left;
       setLeft(left);

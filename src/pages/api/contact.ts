@@ -4,7 +4,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const contact= async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, service, message } = req.body;
   if (!name || !email || !message) {
     return res.status(400).json({error:"Incomplete data"});
@@ -22,3 +22,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.status(200).json(data);
 };
+
+export default contact;

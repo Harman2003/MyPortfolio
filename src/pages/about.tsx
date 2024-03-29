@@ -13,7 +13,7 @@ export default function Home() {
   const y = useTransform(scrollYProgress, (val)=>(`-${20*(1-val)}%`));
   return (
     <>
-        <Navbar mode="primary" />
+      <Navbar mode="primary" />
       <main>
         <div className="bg-white relative z-10 font-manrope">
           <div className="px-4 xs:px-10 sm:px-20 md:px-40">
@@ -62,17 +62,17 @@ export default function Home() {
             {/* About Me */}
             <div className="grid md:grid-cols-[30%,70%] gap-10">
               <div className="flex flex-col gap-5 max-w-[600px]">
-              <span>
-                I'm a 3rd year B.Tech undergraduate at PEC, Chandigarh & an enthusiastic full stack web developer. With each project, I push my work to new horizons,
-                always putting quality and growth first.
+                <span>
+                  I&rsquo;m a 3rd year B.Tech undergraduate at PEC, Chandigarh &
+                  an enthusiastic full stack web developer. With each project, I
+                  push my work to new horizons, always putting quality and
+                  growth first.
                 </span>
-                <span className="text-gray-400">
-                  Always Exploring...
-                </span>
+                <span className="text-gray-400">Always Exploring...</span>
               </div>
               <div className="bg-black overflow-hidden h-[80%]">
-                <motion.div className="w-full h-full" style={{y:y}}>
-                <Image src={myphoto} alt="harman singh" className="" />
+                <motion.div className="w-full h-full" style={{ y: y }}>
+                  <Image src={myphoto} alt="harman singh" className="" />
                 </motion.div>
               </div>
             </div>

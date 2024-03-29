@@ -15,7 +15,7 @@ export const Hanger = () => {
         <span>Chandigarh</span>
       </div>
       <div className="">
-     <Globe size={160}/>
+     <Globe/>
       </div>
     </div>
   );

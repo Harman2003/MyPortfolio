@@ -30,7 +30,7 @@ export const Greeting = () => {
       );
     })();
     return () => clearTimeout(timer);
-  }, [idx]);
+  }, [idx, greetingList]);
 
   return (
     <AnimatePresence>

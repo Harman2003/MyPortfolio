@@ -108,7 +108,7 @@ export default function Home() {
         <div className="w-full sm:w-2/3 px-6">
           <header className="w-full grid sm:grid-cols-[70%,20%] justify-between items-end py-20 sm:pb-32">
             <h1 className="xs:flex xs:flex-col text-[clamp(2.5em,5vw,6em)] leading-[1.2em] tracking-tight xs:whitespace-nowrap">
-              <span>Let's connect to </span>
+              <span>Let&rsquo;s connect to </span>
               <span>Build Something</span>
             </h1>
             <Image
@@ -166,8 +166,15 @@ export default function Home() {
                         xFactor={0.1}
                         yFactor={0.1}
                       >
-                        <motion.span className="w-full h-full flex justify-center items-center text-white text-lg" animate={{opacity:[0,1], transition:{duration:0.5}}} key={status}>
-                          {isLoading ? <Loader/> : notification[status]}
+                        <motion.span
+                          className="w-full h-full flex justify-center items-center text-white text-lg"
+                          animate={{
+                            opacity: [0, 1],
+                            transition: { duration: 0.5 },
+                          }}
+                          key={status}
+                        >
+                          {isLoading ? <Loader /> : notification[status]}
                         </motion.span>
                       </Magnetic>
                     </Magnetic>

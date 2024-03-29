@@ -45,7 +45,7 @@ export const HeroText = ({ text }: { text: string[] }) => {
     //-- below causes issue in mobile view as height changes when scroll due to chrome top navbar which cause reset in herotext
     // window.addEventListener("resize", handleResize);
     // return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  });
 
   const animate = () => {
     setAnimateProps(({ x, direction }) => {

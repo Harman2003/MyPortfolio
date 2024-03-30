@@ -203,7 +203,7 @@ const Projects = () => {
               yFactor={0.1}
             >
               <motion.span
-                className="w-full h-full flex justify-center items-center font-medium text-gray-700"
+                className="w-full h-full flex justify-center items-center text-gray-700"
                 whileHover={{ color: "white" }}
               >
                 More Work

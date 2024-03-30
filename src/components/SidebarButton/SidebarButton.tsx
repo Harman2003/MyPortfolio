@@ -18,10 +18,10 @@ export const SidebarButton: React.FC<{ isOpen: boolean; toggle: () => void }> = 
         background: isOpen ? "#455ce9" : "#1c1d20",
       }}
       exit={{ scale: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.4 }}
       className={tw(
         !isOpen && "border border-gray-50/30",
-        "hidden sm:block fixed z-[99] top-5 right-5 size-20 p-6 rounded-full overflow-hidden"
+        "fixed z-[99] top-5 right-5  size-16 sm:size-20  p-4 sm:p-6 rounded-full overflow-hidden"
       )}
           onClick={toggle}
           onHoverStart={onHoverStart}

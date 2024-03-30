@@ -6,8 +6,10 @@ import { Magnetic } from "@/extras";
 import Link from "next/link";
 import HoverEffect from "../HoverEffect/HoverEffect";
 import { socials } from "@/constant/footer";
+import { useDimension } from "@/hooks/useWidth";
 
 export const Footer: React.FC = () => {
+  const {width} = useDimension();
   const [currentTime, setCurrentTime] = useState<string>("");
   useEffect(() => {
     const time = new Date().toLocaleString().split(",")[1];
@@ -25,7 +27,7 @@ export const Footer: React.FC = () => {
     <motion.div
       ref={ref}
       className="min-h-dvh bg-[#1c1d20] w-full flex flex-col justify-between relative"
-      style={{ y: y }}
+      style={{ y: width<1060?0:y }}
     >
       <div className="pt-14 flex justify-center">
         <div className="w-full px-6 ss:px-20 md:w-2/3">
@@ -36,7 +38,7 @@ export const Footer: React.FC = () => {
                 width={80}
                 height={80}
                 alt=""
-                className="inline size-[clamp(3rem,6vw,5rem)] rounded-full object-cover mr-6"
+                className="hidden xs:inline size-[clamp(3rem,6vw,5rem)] rounded-full object-cover mr-6"
               />
               Let’s work
             </span>

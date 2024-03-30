@@ -1,7 +1,7 @@
 "use client";
 import { greetingMap } from "@/utils/greetingMap";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const Greeting = () => {
@@ -10,11 +10,11 @@ export const Greeting = () => {
   const greetingList = greetingMap(path);
   const isVisible = idx < greetingList.length;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setIdx(0);
   }, [path]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let timer: any;
     (() => {
       timer = setTimeout(
@@ -44,7 +44,7 @@ export const Greeting = () => {
         >
           <motion.span initial={{ opacity:0}} whileInView={{opacity:1, transition:{duration:0.2}}} className="m-auto flex items-center">
             <span className="inline-block mr-4 mt-1 size-3 rounded-full bg-white" />
-            <span className="text-white text-[clamp(2rem,4vw,4rem)]">
+            <span className="text-white text-[clamp(3rem,4vw,4rem)] font-light">
               {greetingList[idx]}
             </span>
           </motion.span>

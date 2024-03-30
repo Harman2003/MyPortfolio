@@ -1,11 +1,11 @@
-import { HeroText, Hanger, RoleText, Navbar } from "@/components";
-import { ClientComponent, Globe } from "@/extras";
+import { Hanger, RoleText, Navbar } from "@/components";
+import { Globe } from "@/extras";
 import profile from ".../public/images/personal/harman.png";
 import { useDimension } from "@/hooks/useWidth"; 
-import { MainText } from "@/constant/scrolltext";
 import Image from "next/image";
 import { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
+import { ParallaxText } from "@/components/HeroText/ParallaxText";
 
 const Hero = () => {
   const { width } = useDimension();
@@ -19,7 +19,7 @@ const Hero = () => {
       ref={ref}
     >
       <div className="absolute w-full top-0">
-      <Navbar mode="secondary"/>
+        <Navbar mode="secondary" />
       </div>
 
       <div className="absolute overflow-hidden -top-[5%] w-full h-[110%]">
@@ -31,10 +31,8 @@ const Hero = () => {
         ></Image>
       </div>
       <div className="absolute flex flex-col ss:flex-col-reverse">
-        <div className="w-screen overflow-hidden flex justify-center">
-          <ClientComponent>
-            <HeroText text={MainText} />
-          </ClientComponent>
+        <div className="w-screen overflow-hidden flex">
+          <ParallaxText baseVelocity={4}>Harman Singh — </ParallaxText>
         </div>
         <div className="flex justify-between items-end py-2">
           {width > 620 && <Hanger />}

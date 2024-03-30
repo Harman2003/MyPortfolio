@@ -8,13 +8,13 @@ import { socials } from "@/constant/footer";
 
 export const Sidebar: React.FC<{ close: () => void }> = ({ close }) => {
   return (
-    <div className="fixed top-0 left-0 w-screen h-dvh">
+    <div className="fixed top-0 left-0 w-screen h-screen">
       {/* Sidebar Section */}
       <motion.div
         className={tw(
           "absolute top-0 right-0 z-[100]",
           "bg-[#1c1d20] text-white font-normal",
-          "size-full max-w-[560px] pt-28 p-8 xs:p-20 sm:p-24"
+          "size-full max-w-[560px] pt-28 pb-24 p-8 xs:p-20 sm:p-24"
         )}
         initial={{ x: "calc(100% + 100px)" }}
         animate={{ x: "0%" }}
@@ -30,7 +30,7 @@ export const Sidebar: React.FC<{ close: () => void }> = ({ close }) => {
           transition={{ ease: "easeInOut", duration: 0.5 }}
         >
           <motion.div
-            className="absolute left-0 top-1/2 -translate-y-1/2 h-[260vh] sm:h-[150vh] bg-[#1c1d20] rounded-l-[50%] z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 h-[200vh] sm:h-[150vh] bg-[#1c1d20] rounded-l-[50%] z-10"
             initial={{ width: 750 }}
             animate={{ width: 0 }}
             exit={{ width: 750 }}
@@ -57,7 +57,9 @@ export const Sidebar: React.FC<{ close: () => void }> = ({ close }) => {
               </Link>
             ))}
           </ul>
+
           <div className="mt-auto text-gray-400 text-[11px] font-semibold">
+          <hr className="xs:hidden my-3 border-gray-50/30"/>
             SOCIALS
           </div>
           <div className="mt-2 text-white/95 text-sm sm:text-base flex gap-6">

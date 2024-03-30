@@ -13,11 +13,11 @@ export const RoundedBulge = () => {
   return (
     <div ref={ref} className="">
       <motion.div
-        className="bg-transparent w-full relative overflow-hidden"
+        className="bg-[#1c1d20] md:bg-transparent w-full relative overflow-hidden"
         style={{ height: yParent }}
       >
         <motion.div
-          className="absolute bottom-0 right-1/2 translate-x-1/2 w-[260vw] sm:w-[150vw] h-[750px] bg-white shadow-lg rounded-b-[50%] z-10"
+          className="absolute bottom-0 right-1/2 translate-x-1/2 w-[300vw] sm:w-[150vw] h-[750px] bg-white shadow-lg rounded-b-[50%] z-10"
           style={{ height: yChild }}
         />
       </motion.div>

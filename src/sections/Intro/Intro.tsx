@@ -34,7 +34,7 @@ const Intro = () => {
           {IntroText.split(" ").map((char, idx) => (
             <span key={idx}>
             <span className="inline-block leading-[clamp(1.9rem,4vw,2.5rem)] overflow-hidden">
-              <motion.span className="inline-block relative" animate={{y:isInView?"0%":"100%"}} transition={{duration:0.5}}>{char}</motion.span>
+              <motion.span className="inline-block relative" animate={{y:isInView?"0%":"100%"}} transition={{delay:0.1, duration:0.3}}>{char}</motion.span>
               </span>
               <span>{" "}</span>
             </span>

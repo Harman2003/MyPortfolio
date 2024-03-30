@@ -1,7 +1,7 @@
 import { Hanger, RoleText, Navbar } from "@/components";
 import { Globe } from "@/extras";
 import profile from ".../public/images/personal/harman.png";
-import { useDimension } from "@/hooks/useWidth"; 
+import { useDimension } from "@/hooks/useDimension"; 
 import Image from "next/image";
 import { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";

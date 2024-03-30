@@ -6,7 +6,7 @@ import { Magnetic } from "@/extras";
 import Link from "next/link";
 import HoverEffect from "../HoverEffect/HoverEffect";
 import { socials } from "@/constant/footer";
-import { useDimension } from "@/hooks/useWidth";
+import { useDimension } from "@/hooks/useDimension";
 
 export const Footer: React.FC = () => {
   const {width} = useDimension();

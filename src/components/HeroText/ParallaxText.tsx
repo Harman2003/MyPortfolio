@@ -9,13 +9,15 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-
+import {useDimension} from "@/hooks/useDimension";
 interface ParallaxProps {
   children: string;
   baseVelocity: number;
 }
 
-export const ParallaxText=({ children, baseVelocity = 100 }: ParallaxProps)=>{
+export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) => {
+  const { width } = useDimension();
+  const isTouchScreeen = width < 1000;
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -48,7 +50,7 @@ export const ParallaxText=({ children, baseVelocity = 100 }: ParallaxProps)=>{
       directionFactor.current = 1;
     }
 
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    moveBy += directionFactor.current * moveBy * (isTouchScreeen?0:velocityFactor.get());
 
     baseX.set(baseX.get() + moveBy);
   });

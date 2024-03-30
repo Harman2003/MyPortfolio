@@ -11,7 +11,7 @@ export const Loader = () => {
   }, []);
   return (
     <span>
-      Loading
+      Sending
       {Array.from({ length: dots }).map((val,idx) => (
         <span key={idx}>.</span>
       ))}

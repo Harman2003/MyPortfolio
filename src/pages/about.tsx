@@ -6,6 +6,7 @@ import { Footer, Navbar, RoundedBulge } from "@/components";
 import myphoto from ".../public/images/personal/harman_original.jpeg";
 import Image from "next/image";
 import Lottie from "lottie-react";
+import { GoDownload } from "react-icons/go";
 
 export default function Home() {
 
@@ -68,11 +69,22 @@ export default function Home() {
                   push my work to new horizons, always putting quality and
                   growth first.
                 </span>
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1mZJ8ezIQhgXybIUGKSaMRpOawwZEATXJ"
+                  className="text-blue-600 group w-fit"
+                >
+                  <span className="w-fit flex gap-2 items-center">
+
+                  <GoDownload />
+                  My Resume
+                  </span>
+                <div className="border-t border-blue-600 w-0 group-hover:w-full transition-all duration-500"></div>
+                </a>
                 <span className="text-gray-400">Always Exploring...</span>
               </div>
               <div className="bg-black overflow-hidden h-[80%]">
                 <motion.div className="w-full h-full" style={{ y: y }}>
-                  <Image src={myphoto} alt="harman singh" priority/>
+                  <Image src={myphoto} alt="harman singh" priority />
                 </motion.div>
               </div>
             </div>

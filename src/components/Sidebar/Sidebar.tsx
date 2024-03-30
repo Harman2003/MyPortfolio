@@ -45,7 +45,7 @@ export const Sidebar: React.FC<{ close: () => void }> = ({ close }) => {
             {navLinks.map(({ id, title, link }) => (
               <Link href={link} key={id}>
                 <li className="w-fit relative group">
-                  <span className="text-[clamp(2.5rem,4vw,5rem)]">{title}</span>
+                  <span className="text-[clamp(2.5rem,4vw,3rem)]">{title}</span>
                   <span
                     className={tw(
                       "hidden xs:block bg-white size-3 rounded-full",

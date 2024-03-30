@@ -72,7 +72,7 @@ export default function Home() {
               </div>
               <div className="bg-black overflow-hidden h-[80%]">
                 <motion.div className="w-full h-full" style={{ y: y }}>
-                  <Image src={myphoto} alt="harman singh" className="" />
+                  <Image src={myphoto} alt="harman singh" priority/>
                 </motion.div>
               </div>
             </div>

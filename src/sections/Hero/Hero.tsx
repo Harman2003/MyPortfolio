@@ -32,7 +32,7 @@ const Hero = () => {
       </div>
       <div className="absolute flex flex-col ss:flex-col-reverse">
         <div className="w-screen overflow-hidden flex">
-          <ParallaxText baseVelocity={4}>Harman Singh — </ParallaxText>
+          <ParallaxText baseVelocity={2}>Harman Singh — </ParallaxText>
         </div>
         <div className="flex justify-between items-end py-2">
           {width > 620 && <Hanger />}

@@ -10,7 +10,7 @@ const contact= async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).json({error:"Incomplete data"});
   }
   const { data, error } = await resend.emails.send({
-    from: "Gane Solutions <onboarding@resend.dev>",
+    from: "My Portfolio <noreply@singhharman.com>",
     to: ["singhharmandhindsa@gmail.com"],
     subject: `New Message from ${name}`,
     html: EmailTemplate(name, email, message),
